@@ -78,7 +78,7 @@
     #contact_name:focus, #contact_email:focus, #contact_subject:focus {
         background-color: #76cdd7;
         color: #fff;
-        border: 2px solid #76cdd7;
+        border: 2px solid #76cdd8;
         border-radius: 5px;
     }
     #contact_message {
@@ -100,7 +100,7 @@
     .submit-btn:hover {
         background-color: #76cdd7;
         color: #ffffff;
-        border: 2px solid #76cdd7;
+        border: 2px solid #76cdd8;
     }
     .tm-sidebar a:hover {
         background-color: #e6e6e6;
@@ -114,8 +114,74 @@
     }
     .tm-banner-inner p {
         width: 100%;
-        perspective: 1000px;
         transition: transform 3s;
         transform: rotateY(360deg);
+    }
+}
+
+@media print {
+    @page {
+        margin: 0 auto;
+    }
+    body {
+        width: 21cm;
+        display: flex;
+    }
+    .tm-sidebar, #about, .tm-team-img, .gallery-container, .carousel-indicators, .img-contact-us, #contact {
+        display: none;
+    }
+    .tm-section-title, .tm-section-description {
+        text-align: center;
+        width: 20cm;
+    }
+    .tm-content-box.flex-2-col {
+        position: relative;
+        top: 1cm;
+    }
+    .tm-content-box.flex-2-col h2 {
+        text-transform: uppercase;
+    }
+    .heading {
+        position: relative;
+        top: 1cm;
+    }
+    .heading h2 {
+        text-transform: uppercase;
+        color: #76cdd7;
+        font-weight: 300;
+        text-align: center;
+    }
+    .heading ol {
+        width: 50%;
+        position: relative;
+        left: 25%;
+        list-style-type: none;
+    }
+    .heading li:nth-child(odd) {
+        text-align: left;
+    }
+    .heading li:nth-child(even) {
+        text-align: right;
+    }
+    .heading li::first-letter {
+        font-size: 20pt;
+        color: #76cdd7;
+    }
+    .heading a {
+        color: #000000;
+    }
+    .blocks {
+        position: relative;
+        page-break-after: always;
+    }
+    .blocks h2 {
+        text-transform: uppercase;
+    }
+    .carousel-item.active h2 {
+        text-transform: uppercase;
+    }
+    .tm-footer {
+        position: relative;
+        top: -3cm;
     }
 }
