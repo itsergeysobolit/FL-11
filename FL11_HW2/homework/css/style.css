@@ -112,4 +112,10 @@
     .tm-section-description {
         text-indent: 20px;
     }
+    .tm-banner-inner p {
+        width: 100%;
+        perspective: 1000px;
+        transition: transform 3s;
+        transform: rotateY(360deg);
+    }
 }
