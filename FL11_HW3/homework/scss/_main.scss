@@ -1,0 +1,264 @@
+$font-size: (
+  small: 16px,
+  medium: 24px
+);
+
+%reset {
+  margin: 0;
+  padding: 0;
+}
+
+%center {
+  margin: 0 auto;
+}
+
+%logo {
+  p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    font-size: map-get($font-size, medium);
+
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+@mixin line {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: $bgClrLine;
+  width: 250px;
+  height: 20px;
+  bottom: 14px;
+  z-index: -1;
+}
+
+@mixin button {
+  background-color: $bg-clrButton;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 15px 50px;
+  text-align: center;
+  font-size: map-get($font-size, small);
+  outline: none;
+
+  &:hover {
+    background-color: lighten($bg-clrButton, 10%);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: darken($bg-clrButton, 10%);
+  }
+}
+
+body {
+  @extend %reset;
+  position: relative;
+  max-width: 100%;
+  font-family: $mainFont;
+  color: $mainColor;
+  background-color: $bodyBgColor;
+  * {
+    box-sizing: border-box;
+    @extend %reset;
+  }
+}
+
+.header {
+  background-image: $bgHeader;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom-right-radius: 50%;
+
+  &-wrap {
+    max-width: 80%;
+    @extend %center;
+    padding: 5% 0;
+  }
+
+  .landing-logo {
+    display: flex;
+    align-items: center;
+
+    p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 10px;
+      font-size: map-get($font-size, medium);
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &_heading {
+    font-family: $hindFont;
+    position: relative;
+    max-width: 49%;
+    margin-top: 5%;
+    font-size: 60px;
+    font-weight: bold;
+    z-index: 1;
+
+    &::after {
+      @include line;
+      bottom: 30px;
+    }
+  }
+
+  &_text {
+    max-width: 50%;
+    margin-top: 5%;
+    font-size: 16x;
+    line-height: 1.5;
+  }
+
+  &_button {
+    @include button;
+    margin-top: 5%;
+  }
+}
+
+.section {
+  padding: 0 10%;
+  @extend %center;
+  padding-top: 5%;
+
+  &_text {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      @include line;
+      width: 174px;
+      height: 13px;
+      bottom: 9px;
+      z-index: -1;
+      right: 422px;
+    }
+  }
+
+  &_card_wrap {
+    display: flex;
+    padding-top: 5%;
+  }
+
+  &_card {
+    display: flex;
+    flex-direction: column;
+    flex: 25%;
+    text-align: center;
+    padding: 15px;
+    background-color: $bgClrCard;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 0 10px;
+
+    &_img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &_heading {
+      font-size: map-get($font-size, medium);
+      margin-top: 15px;
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        @include line;
+        width: 172px;
+        height: 10px;
+        bottom: 1px;
+        right: 90px;
+      }
+    }
+
+    &_text {
+      margin-top: 15px;
+      font-size: map-get($font-size, small);
+    }
+  }
+
+  &_banner {
+    @extend %center;
+    position: relative;
+    display: flex;
+    margin-top: 5%;
+    max-width: 60%;
+    justify-content: space-around;
+    background: linear-gradient(45deg, $bg-clrButton, $bgClrLine);
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    top: 50px;
+
+    &_text_wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &_heading {
+      font-family: "Hind", sans-serif;
+      font-size: map-get($font-size, medium);
+      font-weight: bold;
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        @include line;
+        width: 50px;
+        height: 9px;
+        bottom: 10px;
+        right: 179px;
+      }
+    }
+
+    &_text {
+      font-size: map-get($font-size, small);
+      color: #ffffff;
+    }
+
+    &_button {
+      @include button;
+    }
+  }
+}
+
+.footer {
+  background-color: $bgClrCard;
+  color: #ffffff;
+
+  &-wrap {
+    @extend %center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10% 10% 40px 10%;
+    align-items: center;
+  }
+
+  &_logo {
+    display: flex;
+    align-items: center;
+
+    @extend %logo;
+  }
+
+  &_text {
+    max-width: 25%;
+  }
+}
