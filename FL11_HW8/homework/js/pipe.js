@@ -4,7 +4,5 @@ function pipe(x) {
     }
     return x;
 }
-
 let addOne = x => 1 + x;
-
 pipe(1, addOne, addOne);
