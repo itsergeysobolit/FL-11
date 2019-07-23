@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 11 - TODO Cat List</title>
+  <link rel="stylesheet" href="./assets/material-icons/material-icons.css">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+
+<body>
+  <div id="root">
+    <header>
+      <h1><span>Todo</span> Cat List</h1>
+      <p class="notification"> Maximum item per list are created </p>
+      <form class="search">
+        <input class="field" type="text" name="search" placeholder="Add new action">
+        <button type="submit" class="add_box">+</button>
+      </form>
+      <hr>
+    </header>
+    <main>
+      <ul class="todos-list">
+        <li draggable="true" class="list-item">
+          <div class="flex-wrap">
+            <input type="checkbox" name="todo_list" id="checkbox0" class="checked">
+            <label for="checkbox0">Find the cat</label>
+            <i class="material-icons edit">edit</i>
+          </div>
+          <i class="material-icons delete">delete</i>
+        </li>
+        <li draggable="true" class="list-item">
+          <div class="flex-wrap">
+            <input type="checkbox" name="todo_list" id="checkbox1" class="checked">
+            <label for="checkbox1">Prepare cat's carry</label>
+            <i class="material-icons edit">edit</i>
+          </div>
+          <i class="material-icons delete">delete</i>
+        </li>
+        <li draggable="true" class="list-item">
+          <div class="flex-wrap">
+            <input type="checkbox" name="todo_list" id="checkbox2" class="checked">
+            <label for="checkbox2">Bathe a cat</label>
+            <i class="material-icons edit">edit</i>
+          </div>
+          <i class="material-icons delete">delete</i>
+        </li>
+      </ul>
+    </main>
+  </div>
+
+  <script src="./src/app.js"></script>
+</body>
+
+</html>
